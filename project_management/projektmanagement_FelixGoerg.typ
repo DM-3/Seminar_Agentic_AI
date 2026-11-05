@@ -45,7 +45,7 @@ Wichtig für eine Gute Zusammenarbeit ist eine klare Rollen-, Aufgaben-, und Ver
 *Werkzeuge:* GitHub (Code, Issues, Kanban-Board), Python mit LangChain bzw. LlamaIndex, Neo4j, Computer des URZ zur Ausführrung, gemeinsames Literaturverzeichnis und Typst für den Berichte.
 
 #table(
-  columns: (auto, 1fr, auto),
+  columns: (auto, auto),
   stroke: 0.4pt + gray,
   inset: 4pt,
   fill: (_, row) => if row == 0 { luma(230) },
