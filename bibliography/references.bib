@@ -11,6 +11,49 @@
   doi            = {10.3390/computers14090382},
   url            = {https://www.mdpi.com/2073-431X/14/9/382},
 }
+@Comment{
+  1 Why Reviewed:
+    introduction of GraphTrace
+
+  2 Reviewed Sections:
+    abstract, chapter 1-3
+
+  3 Goal / Research Question:
+    improve information retrieval for complex, multi-hop queries through GraphTrace framework
+
+  4 Methodology / Technologies / System:
+    User Query $->$ Query Decomposition
+    User Query $->$ Entity Extraction $->$ Path Finding
+    Query Decomposition + Path Finding $->$ Path Ranking $->$ Aggregation
+
+    - entity extraction: 
+        gpt-4o-mini with system prompt to output entities as JSON
+    - path finding: 
+        entities matched to nodes, #raw("allShortestPaths")
+    - query decomposition: 
+        all-MiniLM-L6-v2 with system prompt to output subquerries as JSON
+    - semantic path ranking: 
+        compute relevance score for each (subquery, path) pair, using ms-marco-MiniLM-L-6-v2 CrossEncoder
+    - context aggregation
+    - LLM-based answer generation
+
+  5 Evaluation Methodology:
+    tested in both retrieval and generation settings
+    - retrieval augmented generation (RAG)
+    - graph-based RAG (knowledge graphs + RAG)
+
+    Dataset: "Knowledge graph about the impacts of the COVID-19 pandemic on the economy"
+    - constructed from 62 reports and economic bulletins by organizations such as World Bank, IMF, European Central Bank
+    - use LLM-generated question-answer pairs for triple extraction and entity linking via wikidata
+    - 30000 triples
+
+  6 Results:
+    - outperforms baseline across evaluation metrics
+    - gains attributed to alignment of semantic reasoning with structured KG traversal $->$ more targeted and interpretable retrieval
+
+  7 Relevance:
+    main reference
+}
 
 @Article{PRISMA_2020,
   author       = {Page, Matthew J and McKenzie, Joanne E and Bossuyt, Patrick M and Boutron, Isabelle and Hoffmann, Tammy C and Mulrow, Cynthia D and Shamseer, Larissa and Tetzlaff, Jennifer M and Akl, Elie A and Brennan, Sue E and Chou, Roger and Glanville, Julie and Grimshaw, Jeremy M and Hr{\'o}bjartsson, Asbj{\o}rn and Lalu, Manoj M and Li, Tianjing and Loder, Elizabeth W and Mayo-Wilson, Evan and McDonald, Steve and McGuinness, Luke A and Stewart, Lesley A and Thomas, James and Tricco, Andrea C and Welch, Vivian A and Whiting, Penny and Moher, David},
