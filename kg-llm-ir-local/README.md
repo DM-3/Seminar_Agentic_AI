@@ -9,7 +9,7 @@ Github Repository of my master's thesis "Leveraging KGs and LLMs for Optimized I
 4. Install neo4j Desktop
 5. Clone this GitHub repository (git clone https://github.com/AnnaO8/kg-llm-ir.git)
 6. Create a virtual environment in VS Code (python -m venv venv)
-7. Activate virtual environment (.venv\Scripts\activate)
+7. Activate virtual environment (.venv\Scripts\activate(Windows), source venv/bin/activate(Linux))
    (if you have security issues, you can temporarly bypass it by running "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process")
 9. Install requirements (pip install -r requirements.txt)
 10. Finished :)
@@ -58,12 +58,12 @@ kg-llm-ir/
 ```
 
 ### Instructions how to set up the graph data base in neo4j Desktop (on your local machine)
-1. Create a new project
-2. Add Economic_KG.csv into the import folder of the project
-3. Use theses credentials  
+1. Create a new instance
+2. Use theses credentials  
    URI = "bolt://localhost:7687 (you might have to change the port number in the code to the provided port number by neo4j)  
    USERNAME = "neo4j"  
-   **PASSWORD = "875421963"** (you have to choose a password, when you create a new neo4j project)  
+   **PASSWORD = "875421963"** (you have to choose a password, when you create a new neo4j project, if different credentials are used, replace them in the python scripts)  
+3. Add Economic_KG.csv into the import folder of the instance (click on "open folder" in the instance, create folder "import" if  not present already)
 4. Insert nodes into neo4j  
    LOAD CSV WITH HEADERS FROM 'file:///Economic_KG.csv'  
    AS row MERGE (n:Entity {name: row.n}) MERGE (m:Entity {name: row.m});
@@ -115,6 +115,3 @@ Running `python generation_evaluation.py` without `--dataset` only aggregates th
 
 ### CAUTION ###
 In the most scripts the command **df.to_csv(...)** is used. If you don't want to overwrite the respective file, you have to choose another file name or comment out this line.
-
-
-
