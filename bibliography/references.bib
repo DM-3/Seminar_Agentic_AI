@@ -1,3 +1,15 @@
+template for review checklist:
+
+@Comment{
+  1 Why Reviewed:
+  2 Reviewed Sections:
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
 @Article{GraphTrace2025,
   author         = {Osipjan, Anna and Khorashadizadeh, Hanieh and Kessel, Akasha-Leonie and Groppe, Sven and Groppe, Jinghua},
   journal        = {Computers},
@@ -11,6 +23,7 @@
   doi            = {10.3390/computers14090382},
   url            = {https://www.mdpi.com/2073-431X/14/9/382},
 }
+
 @Comment{
   1 Why Reviewed:
     introduction of GraphTrace
@@ -66,6 +79,349 @@
   eprint       = {https://www.bmj.com/content/372/bmj.n71.full.pdf},
   publisher    = {BMJ Publishing Group Ltd},
   url          = {https://www.bmj.com/content/372/bmj.n71},
+}
+
+@Article{RAGSurvey2023,
+  author           = {Gao, Yunfan and Xiong, Yun and Gao, Xinyu and Jia, Kangxiang and Pan, Jinliu and Bi, Yuxi and Dai, Yi and Sun, Jiawei and Guo, Qianyu and Wang, Meng and Wang, Haofen},
+  journal          = {arXiv.org},
+  title            = {Retrieval-Augmented Generation for Large Language Models: A Survey},
+  year             = {2023},
+  doi              = {10.48550/ARXIV.2312.10997},
+  researchrabbitid = {278999430},
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025 (source 5)
+    - found with research rabbit focus on GraphTrace
+    - basis for Retrieval Augmented Generation
+  
+  2 Reviewed Sections:
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@misc{RAG2021,
+  title={Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}, 
+  author={Patrick Lewis and Ethan Perez and Aleksandra Piktus and Fabio Petroni and Vladimir Karpukhin and Naman Goyal and Heinrich Küttler and Mike Lewis and Wen-tau Yih and Tim Rocktäschel and Sebastian Riedel and Douwe Kiela},
+  year={2021},
+  eprint={2005.11401},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2005.11401}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025 (source 4)
+    - introduction of RAG
+
+  2 Reviewed Sections:
+    - abstract
+    - introduction
+
+  3 Goal / Research Question:
+    - improve performance on knowledge intensive tasks
+    - improve update-ability
+    - improve explainability
+    - combine parametric with non-parametric memory
+    - general purpose fine tuning method for RAG-models
+
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@misc{REALM2020,
+      title={REALM: Retrieval-Augmented Language Model Pre-Training}, 
+      author={Kelvin Guu and Kenton Lee and Zora Tung and Panupong Pasupat and Ming-Wei Chang},
+      year={2020},
+      eprint={2002.08909},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2002.08909}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - precursor to RAG
+  2 Reviewed Sections:
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@misc{MultiModalRAG2023,
+      title={Retrieval-Augmented Multimodal Language Modeling}, 
+      author={Michihiro Yasunaga and Armen Aghajanyan and Weijia Shi and Rich James and Jure Leskovec and Percy Liang and Mike Lewis and Luke Zettlemoyer and Wen-tau Yih},
+      year={2023},
+      eprint={2211.12561},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2211.12561}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - potential "research expansion" note
+
+  2 Reviewed Sections:
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@article{LLMSurvey2026,
+   title={A Survey of Large Language Models},
+   volume={20},
+   ISSN={2095-2236},
+   url={http://dx.doi.org/10.1007/s11704-026-60308-3},
+   DOI={10.1007/s11704-026-60308-3},
+   number={12},
+   journal={Frontiers of Computer Science},
+   publisher={Springer Science and Business Media LLC},
+   author={Zhao, Wayne Xin and Zhou, Kun and Li, Junyi and Tang, Tianyi and Dong, Zican and Hou, Yupeng and Zhang, Beichen and Min, Yingqian and Zhang, Junjie and Liu, Peiyu and Wang, Xiaolei and Du, Yifan and Yang, Chen and Chen, Yushuo and Chen, Zhipeng and Jiang, Jinhao and Ren, Ruiyang and Li, Yifan and Tang, Xinyu and Liu, Zikang and Hu, Yiwen and Nie, Jian-Yun and Wen, Ji-Rong},
+   year={2026},
+   month=May 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - review of llms
+
+  2 Reviewed Sections:
+    - abstract
+
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+    - use in introduction
+}
+
+@misc{LLMStruggles2023,
+      title={Large Language Models Struggle to Learn Long-Tail Knowledge}, 
+      author={Nikhil Kandpal and Haikang Deng and Adam Roberts and Eric Wallace and Colin Raffel},
+      year={2023},
+      eprint={2211.08411},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2211.08411}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by RAGSurvey2023
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+    - support claim "LLMs are bad at knowledge-intese tasks"
+}
+
+@misc{LLMHallucination2025,
+      title={Siren's Song in the AI Ocean: A Survey on Hallucination in Large Language Models}, 
+      author={Yue Zhang and Yafu Li and Leyang Cui and Deng Cai and Lemao Liu and Tingchen Fu and Xinting Huang and Enbo Zhao and Yu Zhang and Chen Xu and Yulong Chen and Longyue Wang and Anh Tuan Luu and Wei Bi and Freda Shi and Shuming Shi},
+      year={2025},
+      eprint={2309.01219},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2309.01219}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by RAGSurvey2023
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+    - support claim "LLMs exhibit hallucinations"
+}
+
+@misc{RAGMultihopBench2024,
+      title={MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries}, 
+      author={Yixuan Tang and Yi Yang},
+      year={2024},
+      eprint={2401.15391},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2401.15391}, 
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025
+  2 Reviewed Sections:
+    - abstract, introduction
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+    - define multi-hop query term
+    - support claim "Multi-hop is challenging for Naive RAG"
+}
+
+@Misc{GraphRAG2025,
+  author        = {Darren Edge and Ha Trinh and Newman Cheng and Joshua Bradley and Alex Chao and Apurva Mody and Steven Truitt and Dasha Metropolitansky and Robert Osazuwa Ness and Jonathan Larson},
+  title         = {From Local to Global: A Graph RAG Approach to Query-Focused Summarization},
+  year          = {2025},
+  archiveprefix = {arXiv},
+  eprint        = {2404.16130},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2404.16130},
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@Misc{ThinkOnGraph2024,
+  author        = {Jiashuo Sun and Chengjin Xu and Lumingyuan Tang and Saizhuo Wang and Chen Lin and Yeyun Gong and Lionel M. Ni and Heung-Yeung Shum and Jian Guo},
+  title         = {Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph},
+  year          = {2024},
+  archiveprefix = {arXiv},
+  eprint        = {2307.07697},
+  primaryclass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2307.07697},
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@Article{LEGOGraphRAG2025,
+  author    = {Cao, Yukun and Gao, Zengyi and Li, Zhiyang and Xie, Xike and Zhou, S. Kevin and Xu, Jianliang},
+  journal   = {Proceedings of the VLDB Endowment},
+  title     = {LEGO-GraphRAG: Modularizing Graph-Based Retrieval-Augmented Generation for Design Space Exploration},
+  year      = {2025},
+  issn      = {2150-8097},
+  month     = {June},
+  number    = {10},
+  pages     = {3269–3283},
+  volume    = {18},
+  doi       = {10.14778/3748191.3748194},
+  publisher = {Association for Computing Machinery (ACM)},
+  url       = {http://dx.doi.org/10.14778/3748191.3748194},
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@inproceedings{GRAG2025,
+    title = "{GRAG}: Graph Retrieval-Augmented Generation",
+    author = "Hu, Yuntong  and
+      Lei, Zhihan  and
+      Zhang, Zheng  and
+      Pan, Bo  and
+      Ling, Chen  and
+      Zhao, Liang",
+    editor = "Chiruzzo, Luis  and
+      Ritter, Alan  and
+      Wang, Lu",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {NAACL} 2025",
+    month = apr,
+    year = "2025",
+    address = "Albuquerque, New Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-naacl.232/",
+    doi = "10.18653/v1/2025.findings-naacl.232",
+    pages = "4145--4157",
+    ISBN = "979-8-89176-195-7",
+    abstract = "Naive Retrieval-Augmented Generation (RAG) focuses on individual documents during retrieval and, as a result, falls short in handling networked documents which are very popular in many applications such as citation graphs, social media, and knowledge graphs. To overcome this limitation, we introduce Graph Retrieval-Augmented Generation (GRAG), which tackles the fundamental challenges in retrieving textual subgraphs and integrating the joint textual and topological information into Large Language Models (LLMs) to enhance its generation. To enable efficient textual subgraph retrieval, we propose a novel divide-and-conquer strategy that retrieves the optimal subgraph structure in linear time. To achieve graph context-aware generation, incorporate textual graphs into LLMs through two complementary views{---}the text view and the graph view{---}enabling LLMs to more effectively comprehend and utilize the graph context. Extensive experiments on graph reasoning benchmarks demonstrate that in scenarios requiring multi-hop reasoning on textual graphs, our GRAG approach significantly outperforms current state-of-the-art RAG methods. Our datasets as well as codes of GRAG are available at \url{https://github.com/HuieL/GRAG}."
+}
+
+@Comment{
+  1 Why Reviewed:
+    - referenced by GraphTrace2025
+  2 Reviewed Sections:
+    - abstract
+  3 Goal / Research Question:
+  4 Methodology / Technologies / System:
+  5 Evaluation Methodology:
+  6 Results:
+  7 Relevance:
+}
+
+@misc{GraphRAGSurvey2024,
+      title={Graph Retrieval-Augmented Generation: A Survey}, 
+      author={Boci Peng and Yun Zhu and Yongchao Liu and Xiaohe Bo and Haizhou Shi and Chuntao Hong and Yan Zhang and Siliang Tang},
+      year={2024},
+      eprint={2408.08921},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2408.08921}, 
+}
+
+@inproceedings{KGConstruction2024,
+  title={Construction and Canonicalization of Economic Knowledge Graphs with LLMs},
+  author={Hanieh Khorashadizadeh and Nandana Mihindukulasooriya and Nilufar Ranji and Morteza Kamaladdini Ezzabady and Fr{\'e}d{\'e}ric Ieng and Jinghua Groppe and Farah Benamara and Sven Groppe},
+  booktitle={Iberoamerican Conference on Knowledge Graphs and Semantic Web},
+  year={2024},
+  url={https://api.semanticscholar.org/CorpusID:276581955}
+}
+
+@InProceedings{DocuRAG2026,
+  author="Sapidis, Iordanis
+  and Zervos, Valantis
+  and Mountantonakis, Michalis
+  and Tzitzikas, Yannis",
+  editor="Balke, Wolf-Tilo
+  and Golub, Koraljka
+  and Manolopoulos, Yannis
+  and Stefanidis, Kostas
+  and Zhang, Zheying
+  and Aalberg, Trond
+  and Manghi, Paolo",
+  title="Interactive and Provenance-Aware Search and QA over Documents Using LLMs, RAG and Knowledge Graph Verbalization",
+  booktitle="New Trends in Theory and Practice of Digital Libraries",
+  year="2026",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="248--257",
+  abstract="When working with a corpus of documents (e.g. in the context of a digital library), various access services are offered such as browsing, keyword search, and faceted search. Recently, Retrieval Augmented Generation (RAG) approaches have been proposed that can leverage LLMs to offer Question Answering (QA) services while addressing the hallucination problem of LLMs. In this direction, this paper investigates an approach for offering QA over document corpora and related Knowledge Graphs that exploits LLMs, RAG, and RAG enhanced with information from Knowledge Graphs. To address the challenge of black-box interaction, we present an interactive system called SemanticRAG. which enables users to ask questions, view the answer generated by each method, and obtain the provenance of each answer. We showcase the feasibility and value of this approach by deploying it over a corpus of scientific papers collected by the FAO UN for ecosystem restoration.",
+  isbn="978-3-032-06136-2"
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
