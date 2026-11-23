@@ -56,16 +56,12 @@
   ),),
   lang: "de",
   //extra_outlines: (table_outline, table_of_symbols,),
-  references: "references.bib"
+  references: "../bibliography/lit_rech_references.bib"
 )
 
+= test
+
 = Einleitung
-#figure(
-  image("../TUBAF_typst_template/TUBAF_Logo_blau.svg"),
-  caption: tubaf.flex-caption(
-    long: [Das Markenlogo ist das zentrale, identitätsstiftende Kernelement im visuellen Auftritt der Universität.],
-    short: [Markenlogo])
-)
-#lorem(100)
+hello @petroni-etal-2021-kilt 
 
 
