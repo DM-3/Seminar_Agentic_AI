@@ -7,11 +7,11 @@ Github Repository of my master's thesis "Leveraging KGs and LLMs for Optimized I
 2. Install git
 3. Install Python
 4. Install neo4j Desktop
-5. Clone this GitHub repository (git clone https://github.com/AnnaO8/kg-llm-ir.git)
-6. Create a virtual environment in VS Code (python -m venv venv)
-7. Activate virtual environment (.venv\Scripts\activate (Windows), source venv/bin/activate (Linux))
-   (if you have security issues, you can temporarly bypass it by running "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process")
-9. Install requirements (pip install -r requirements.txt)
+5. Clone this GitHub repository (```git clone https://github.com/AnnaO8/kg-llm-ir.git```)
+6. Create a virtual environment in VS Code (```python -m venv venv```)
+7. Activate virtual environment (```.venv\Scripts\activate``` (Windows), ```source venv/bin/activate``` (Linux))
+   (if you have security issues, you can temporarly bypass it by running ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process```)
+9. Install requirements (```pip install -r requirements.txt```)
 10. Finished :)
 
 
@@ -65,17 +65,22 @@ kg-llm-ir/
    **PASSWORD = "875421963"** (you have to choose a password, when you create a new neo4j project, if different credentials are used, replace them in the python scripts)  
 3. Add Economic_KG.csv into the import folder of the instance (click on "open folder" in the instance, create folder "import" if  not present already)
 4. Insert nodes into neo4j  
+    ```
    LOAD CSV WITH HEADERS FROM 'file:///Economic_KG.csv'  
    AS row MERGE (n:Entity {name: row.n}) MERGE (m:Entity {name: row.m});
+    ```
 5. Insert edges into neo4j  
+```
    LOAD CSV WITH HEADERS FROM 'file:///Economic_KG.csv'  
    AS row  
    MATCH (a:Entity {name: row.n})  
    MATCH (b:Entity {name: row.m})  
    MERGE (a)-[r:RELATIONSHIP {type: row.r}]->(b);
+   ```
 6. In order to Check and visualize 100 tripels of KG  
-   MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 100;  
-
+```
+MATCH (n)-[r]->(m) RETURN n, r, m LIMIT 100;  
+```
 
 ### How to reproduce the evaluations
 To reproduce the evaluations for retrieval and generation results, simply run these comands in the ./evaluation/ folder  
