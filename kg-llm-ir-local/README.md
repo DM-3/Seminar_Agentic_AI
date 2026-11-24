@@ -9,7 +9,7 @@ Github Repository of my master's thesis "Leveraging KGs and LLMs for Optimized I
 4. Install neo4j Desktop
 5. Clone this GitHub repository (git clone https://github.com/AnnaO8/kg-llm-ir.git)
 6. Create a virtual environment in VS Code (python -m venv venv)
-7. Activate virtual environment (.venv\Scripts\activate(Windows), source venv/bin/activate(Linux))
+7. Activate virtual environment (.venv\Scripts\activate (Windows), source venv/bin/activate (Linux))
    (if you have security issues, you can temporarly bypass it by running "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process")
 9. Install requirements (pip install -r requirements.txt)
 10. Finished :)
