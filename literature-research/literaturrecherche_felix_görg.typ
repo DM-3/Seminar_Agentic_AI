@@ -46,4 +46,4 @@ GraphTrace @osipjan_graphtrace_2025 (Osipjan et al., _Computers_ 14(9), 2025) is
 *Grenzen und Anknüpfungspunkte.* Die Autoren nennen schwächere Ergebnisse bei niedriger und hoher Komplexität. Bei acht Hops liegt Naive RAG mit Subquery vorn (MRR 0,2908 gegenüber 0,1960). Zudem sind Empowerment und Comprehensiveness verbesserbar, und Korrektheit sowie Halluzinationsraten sind noch nicht ausgewertet. Die menschliche Bewertung umfasst nur 40 Stichproben bei 67 % Übereinstimmung. Hinzu kommt, dass GraphTrace auf einem einzigen, vorab konstruierten KG und mit einem proprietären LLM evaluiert wurde und keine adaptive Hop-Steuerung besitzt. Daraus ergeben sich Fragen für unser Projekt: Welche Module tragen den Gewinn (Ablation)? Wie verhält sich die Pipeline mit Open-Source-LLMs, bei 8+ Hops und bei unvollständigem KG @zhou_evaluating_2025? Und wie schneidet sie gegen neuere Verfahren wie PolyG @liu_polyg_2025, StepChain @ni_stepchain_2025 oder S-Path-RAG @fu_s-path-rag_2026 ab?
 
 
-#bibliography("../bibliography/individual/LitRech.bib")
+#bibliography("../bibliography/references.bib")
