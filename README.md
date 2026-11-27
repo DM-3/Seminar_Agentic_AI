@@ -33,10 +33,17 @@ Seminar_Agentic_AI/
 
 
 ## Get Started
-...
+1. navigate to src directory (```cd src```)
+2. create a virtual environment (```python -m venv venv```)
+3. activate virtual environment (```source venv/bin/activate```)
+4. install requirements (```pip install -r requirements.txt```)
+
 
 ## Knowledge Graph Construction
 - convert source documents to structured data (docling)
+```bash
+docling <doc>.pdf --to md
+```
 - named entity recognition
 - relation extraction
 - (attribute extraction)
