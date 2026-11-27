@@ -1,0 +1,14 @@
+pandas
+numpy
+faiss-cpu
+sentence-transformers
+llama-index
+llama-index-retrievers-bm25
+neo4j
+matplotlib
+seaborn
+keybert
+openai
+pydantic
+python-dotenv
+docling

@@ -11,4 +11,3 @@ keybert
 openai
 pydantic
 python-dotenv
-docling
