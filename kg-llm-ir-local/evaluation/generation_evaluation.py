@@ -111,11 +111,12 @@ def discover_strata_instance():
         yield base_url, api_key, cfg.get("model_name")
 
 
-def build_client(use_cloud=False, base_url=None, api_key=None, model=None):
-    """Build an OpenAI client for the local Strata server (default) or the cloud."""
-    if use_cloud:
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        return client, model or os.getenv("LLM_MODEL", "gpt-4o-mini")
+def build_client(use_local=False, base_url=None, api_key=None, model=None):
+    """Use the ACCloud (default) or build an OpenAI client for the local Strata server."""
+    if not use_local:
+        client = OpenAI(api_key=os.getenv("ACCLOUD_API_KEY"), base_url = base_url)
+        return client, model or os.getenv("LLM_MODEL", "qwen3.8-27b")
+
 
     base_url = base_url or os.getenv("STRATA_BASE_URL")
     api_key = api_key or os.getenv("STRATA_API_KEY")
@@ -541,9 +542,9 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", choices=DATASETS,
                         help="Run the judge on this dataset instead of aggregating results")
     parser.add_argument("--run", default="1", help="Run suffix, e.g. 1 -> ..._run1.csv")
-    parser.add_argument("--cloud", action="store_true", help="Use OpenAI cloud (gpt-4o-mini)")
+    parser.add_argument("--local", action="store_true", help="Use Starta Model")
     parser.add_argument("--model", default=None, help="Model name (default: auto-detect)")
-    parser.add_argument("--base-url", default=None, help="Override endpoint, e.g. http://localhost:8080/v1")
+    parser.add_argument("--base-url", default="https://chat-ai.academiccloud.de/v1", help="Override endpoint, e.g. http://localhost:8080/v1")
     parser.add_argument("--api-key", default=None, help="Override endpoint API key")
     parser.add_argument("--max-tokens", type=int, default=2000)
     parser.add_argument("--temperature", type=float, default=0.0)
@@ -552,9 +553,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.dataset:
-        client, model = build_client(use_cloud=args.cloud, base_url=args.base_url,
+        client, model = build_client(use_local=args.local, base_url=args.base_url,
                                      api_key=args.api_key, model=args.model)
-        QA_df = pd.read_csv(f"../data/QA_{args.dataset}.csv")
+        QA_df = pd.read_csv(f"./data/QA_{args.dataset}.csv")
         if args.limit:
             QA_df = QA_df.head(args.limit).reset_index(drop=True)
         res = load_results(args.dataset)

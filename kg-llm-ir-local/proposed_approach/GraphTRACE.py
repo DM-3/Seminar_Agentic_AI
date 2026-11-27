@@ -81,11 +81,11 @@ def discover_strata_instance():
         yield base_url, api_key, cfg.get("model_name")
 
 
-def build_client(use_cloud=False, base_url=None, api_key=None, model=None):
-    """Build an OpenAI client for the local Strata server (default) or the cloud."""
-    if use_cloud:
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        return client, model or os.getenv("LLM_MODEL", "gpt-4o-mini")
+def build_client(use_local=False, base_url=None, api_key=None, model=None):
+    """Use the ACCloud (default) or build an OpenAI client for the local Strata server."""
+    if not use_local:
+        client = OpenAI(api_key=os.getenv("ACCLOUD_API_KEY"), base_url = base_url)
+        return client, model or os.getenv("LLM_MODEL", "qwen3.8-27b")
 
     base_url = base_url or os.getenv("STRATA_BASE_URL")
     api_key = api_key or os.getenv("STRATA_API_KEY")
@@ -423,7 +423,7 @@ def GraphTRACE(QA_df, output_name, client, model, driver, cross_encoder,
               top_k=3, save=True):
     print("START GraphTRACE()")
 
-    file_path_name = f"../evaluation/results/{output_name}.csv"
+    file_path_name = f"./evaluation/results/{output_name}.csv"
     done_queries = set()
     if save:
         if os.path.exists(file_path_name):
@@ -549,14 +549,14 @@ DATASETS = ["Converging", "Divergent", "Linear", "descriptive",
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="GraphTRACE with a local Strata model")
+    parser = argparse.ArgumentParser(description="GraphTRACE with Acedemic Cloud AI")
     parser.add_argument("--dataset", choices=DATASETS, nargs="*",
                         help="Datasets to run (default: Converging Divergent Linear)")
     parser.add_argument("--limit", type=int, default=None,
                         help="Only run the first N rows (smoke test)")
-    parser.add_argument("--cloud", action="store_true", help="Use OpenAI cloud (gpt-4o-mini)")
+    parser.add_argument("--local", action="store_true", help="Use local Strata instance")
     parser.add_argument("--model", default=None, help="Model name (default: auto-detect)")
-    parser.add_argument("--base-url", default=None,
+    parser.add_argument("--base-url", default="https://chat-ai.academiccloud.de/v1",
                         help="Override endpoint, e.g. http://localhost:8080/v1")
     parser.add_argument("--api-key", default=None, help="Override endpoint API key")
     parser.add_argument("--uri", default=os.getenv("NEO4J_URI", "bolt://localhost:7687"))
@@ -579,7 +579,7 @@ if __name__ == "__main__":
 
     datasets = args.dataset or ["Converging", "Divergent", "Linear"]
 
-    client, model = build_client(use_cloud=args.cloud, base_url=args.base_url,
+    client, model = build_client(use_local=args.local, base_url=args.base_url,
                                  api_key=args.api_key, model=args.model)
 
     driver = GraphDatabase.driver(args.uri, auth=(args.user, args.password))
